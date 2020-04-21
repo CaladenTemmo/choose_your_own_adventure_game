@@ -1,5 +1,5 @@
 class Knight
-    
+
 "*You wake up on the cobble road infront of a bar with little memory staring into the bright sun as a man approches you* Hello noble knight what is thy name
 ".each_char { |char| 
     putc char     
@@ -8,7 +8,7 @@ class Knight
 }
  
      name = gets.strip.capitalize
-    "Hello Sir #{name} *the man hands you scroll which says* hello dost thou accept the quest to save my daughter the princess
+    "Hello Sir #{name} *the man hands you a scroll which says* hello dost thou accept the quest to save my daughter the princess
     ".each_char { |char| 
         putc char     
         $stdout.flush
