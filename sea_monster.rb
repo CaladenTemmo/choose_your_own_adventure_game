@@ -29,18 +29,19 @@ $stdout.flush
 sleep 0.05
 } 
       action = gets.chomp
+if you <= 0 && sea_monster <= 0
+    putc "*You both die! Game over.*"
+        elsif you <= 0 
 
-      if you <= 0 
-
-       putc "You have died! Game over.".each_char { |char| 
+       putc "*You have died! Game over.*".each_char { |char| 
         putc char     
         $stdout.flush
         sleep 0.05
         } 
-break
+        break
         elsif sea_monster <= 0 
         
-        putc "*The sea monster is dead now you get back onto the row boat and head down towards the castle in the distance".each_char { |char| 
+        putc "*The sea monster is dead now you get back onto the row boat and head down towards the castle in the distance*".each_char { |char| 
             putc char     
             $stdout.flush
             sleep 0.05
