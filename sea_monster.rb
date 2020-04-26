@@ -1,7 +1,7 @@
 require_relative"./princess.rb"
 
 class Sea_Monster
-# def char_one_method (name)
+def char_one_method (name)
 "*Now that you have a row boat you hed down the river heading towards the castle which you see in the distance.
 When out of nowhere a giant object surfeses out of the water and knocks you onto a nearbye island and starts to circle the island when you notice its a 
 sea monster and the only way out of this one is to fight.
@@ -112,7 +112,7 @@ break
 end
 end
 end
-# end
+end
 
 
 

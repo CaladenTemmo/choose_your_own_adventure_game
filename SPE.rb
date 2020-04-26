@@ -2,7 +2,7 @@ require_relative"./knight.rb"
 require_relative"./wizard.rb"
 
 system "clear"
-"Hello welcome to SPE(WT) what is your name
+"Hello welcome to SPE what is your name
  ".each_char { |char| 
     putc char     
     $stdout.flush
