@@ -1,5 +1,7 @@
 require_relative"./knight.rb"
 require_relative"./wizard.rb"
+require 'colorize'
+
 
 system "clear"
 "Hello welcome to SPE what is your name
@@ -8,7 +10,7 @@ system "clear"
     $stdout.flush
     sleep 0.05
 }
-name = gets.strip.capitalize
+name = gets.strip.capitalize.blue
 
 "Please choose a character
  Press 1 for knight

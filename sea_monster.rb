@@ -1,11 +1,12 @@
 require_relative"./princess.rb"
 
 class Sea_Monster
+    # if character == Knight.new
 def char_one_method (name)
-"*Now that you have a row boat you hed down the river heading towards the castle which you see in the distance.
+intro_string = "*Now that you have a row boat you hed down the river heading towards the castle which you see in the distance.
 When out of nowhere a giant object surfeses out of the water and knocks you onto a nearbye island and starts to circle the island when you notice its a 
 sea monster and the only way out of this one is to fight.
-#{name} has 100 HP
+Sir #{name} has 100 HP
 Sea monster has 100 HP
 *Press enter to continue*".each_char { |char| 
 putc char     
@@ -17,20 +18,19 @@ sea_monster = 100
 enter = gets
 if "/n"
     system "clear"
-
-
+ 
 loop do
-    "Type any to attack or block
-SL=slash
-B=block
-ST=stab".each_char { |char| 
+    "Type any of the options to attack or block
+SL=slash(damage)
+B=block(heal)
+ST=stab(damage)".each_char { |char| 
 putc char     
 $stdout.flush
 sleep 0.05
 } 
       action = gets.chomp
 if you <= 0 && sea_monster <= 0
-    
+
     putc "*You both die! Game over.*".each_char { |char| 
         putc char     
         $stdout.flush
@@ -59,14 +59,13 @@ if you <= 0 && sea_monster <= 0
         end 
 
     if action == "SL"
-
-    sea_monster += rand(-18..-10) 
-    you += rand(-15..-10)
+    sea_monster += rand(-25..-10) 
+    you += rand(-20..-15)
     ["You slashed him in his chest and dealt .set. damage to the sea monster!
         but during your slash he wacks you with his tail and does .set. of damage", 
         "You slashed him in the neck and delt .set. damage to the sea monster
         but during the slash he headbuts you and does .set. damage",
-        "You got swallowed and slash his insides and dealt .set. damage to the sea monster!
+        "You got swallowed up and slash his insides and dealt .set. damage to the sea monster!
         but he crushes you a little before he spits you back out and does .set. of damage",
     "You slash the him in the face and dealt .set. damage to the sea monster!
     but the monster jumps up and crashes down and the shockwave knocks you back and does .set. of damage"].shuffle.first.each_char { |char| 
@@ -81,13 +80,13 @@ if you <= 0 && sea_monster <= 0
     }
     end
     if action == "ST"
-    sea_monster += rand(-25..-10) 
-    you += rand(-20..-10)
+        sea_monster += rand(-20..-15) 
+        you += rand(-15..-10)
     ["You stabbed him in his chest and dealt .set. damage to the sea monster!
         but during your stab he wacks you with his tail and does .set. of damage", 
         "You stabbed him in the neck and delt .set. damage to the sea monster
         but during the stab he headbuts you and does .set. damage",
-        "You got swallowed and stabbed his insides and dealt .set. damage to the sea monster!
+        "You got swallowed up and stabbed his insides and dealt .set. damage to the sea monster!
         but he crushes you a little before he spits you back out and does .set. of damage",
     "You stab the him in the face and dealt .set. damage to the sea monster!
     but the monster jumps up and crashes down and the shockwave knocks you back and does .set. of damage"].shuffle.first.each_char { |char| 
@@ -120,9 +119,10 @@ end
 end
 end
 end
-
-
-
+# end
+# if Wizard
+#     puts "test"
+# end
 
 
 

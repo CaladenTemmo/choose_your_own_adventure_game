@@ -21,10 +21,11 @@ class Knight
                         sleep 0.05
                         } 
                     answer = gets.chomp
-                    if answer == 'yes'
+                    if answer == "yes"
                         break
                     elsif answer == "no"
-                        "Pray i am asking once again for thy help".each_char { |char| 
+                        "Sir #{name}: Sorry I'm not in the mood *stumbles over* wherefore don't thou go just ask the wizard or the secret elf Jake
+                        King Andrew: What elf? thou art drunk thither art nay such thing as elves. But pray i am asking once again for thy help".each_char { |char| 
                         putc char     
                         $stdout.flush
                         sleep 0.05
@@ -38,19 +39,20 @@ class Knight
                     end
                 end
             system "clear"
-    "King Andrew: Thank thou so much *you leave going north for your jorney.
-        *You run into a fork in the road and read a sign which says
-        Sir #{name}: Go left towards the docks. Go right towards the bridge".each_char { |char| 
+    "King Andrew: Thank thou so much *you leave going north for your jorney*.
+        *You run into a fork in the road and read a sign which reads*
+        *Go left towards the docks. Go right towards the bridge*
+        *Type left or right*".each_char { |char| 
         putc char     
         $stdout.flush
         sleep 0.05
         } 
         road = gets.chomp
-                    if road == 'left'
+                    if road == "left"
                         docks = Docks.new
                         docks.char_one_method (name)
                     elsif road == "right"
-                        bridge = bridge.new
+                        bridge = Bridge.new
                         bridge.char_one_method (name)
                     else
                         "Choose your path".each_char { |char| 
