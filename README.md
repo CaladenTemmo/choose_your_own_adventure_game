@@ -64,6 +64,9 @@ Implementation
 Trello:
 https://trello.com/b/RPU7rAxC/terminal-app
 
+Trello is in docs
+Mind Map is in docs
+Tests are in docs
 
 
 Day 1
