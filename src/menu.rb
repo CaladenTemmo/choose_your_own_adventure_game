@@ -2,6 +2,7 @@ system "clear"
 require "tty-prompt"
 require "artii"
 require_relative"./SPE.rb"
+require "colorize"
 a = Artii::Base.new :font => 'slant'
 prompt = TTY::Prompt.new
 system "clear"

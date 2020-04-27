@@ -1,5 +1,4 @@
 require_relative"./princess.rb"
-require "colorize"
 
 
 class Troll
