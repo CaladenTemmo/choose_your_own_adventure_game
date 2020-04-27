@@ -1,7 +1,7 @@
 class Princess
-    def char_one_method (name)
-        "*you finally make it to the castle, kill the dragon and break down the locked door to save princess Emily*
-        Princess Emily: Thank thou so much for saving me, *You take her back to King Andrew and he also thanks you and gives you 100 shilling".each_char { |char| 
+    def char_one_method(name, name2, king, princess)
+        "*you finally make it to the castle, kill the dragon and break down the locked door to save #{princess}*
+        #{princess}: Thank thou so much for saving me, *You take her back to #{king} and he also thanks you and gives you 100 shilling".each_char { |char| 
         putc char     
         $stdout.flush
         sleep 0.05

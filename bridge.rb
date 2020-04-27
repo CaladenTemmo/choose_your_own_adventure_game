@@ -1,7 +1,7 @@
 require_relative"./troll.rb"
 
 class Bridge
-    def char_one_method (name)
+    def char_one_method(name, name2, king, princess)
         intro_string = "*
                *Press enter to continue*".each_char { |char| 
             putc char     
