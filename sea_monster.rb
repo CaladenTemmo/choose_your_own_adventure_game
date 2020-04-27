@@ -1,6 +1,7 @@
 require_relative"./princess.rb"
 require "colorize"
 
+
 class Sea_Monster
     # if character == Knight.new
 def char_one_method(name, name2, king, princess)
@@ -22,9 +23,39 @@ sea_monster = 100
 enter = gets
 if "/n"
     system "clear"
+end
  
 loop do
-    "Type any of the options to attack or block
+    if sea_monster <= 0 && you <= 0
+        system "clear"
+        "Sir #{you} died and the #{sm} died. You lose".each_char { |char| 
+            putc char     
+            $stdout.flush
+            sleep 0.05
+            } 
+        sleep 5
+        break
+        elsif sea_monster <= 0 
+        "#{name} wins the battle and head towards the castle".each_char { |char| 
+            putc char     
+            $stdout.flush
+            sleep 0.05
+            } 
+            sleep 5
+        castle = Princess.new
+        castle.char_one_method(name, name2, king, princess)
+        break
+    elsif you <= 0
+        system "clear"
+        "Sir #{you} died".each_char { |char| 
+            putc char     
+            $stdout.flush
+            sleep 0.05
+            } 
+        sleep 5
+    break
+    else
+"Type any of the options to attack or block
 SL=slash(damage)
 B=block(heal)
 ST=stab(damage)".each_char { |char| 
@@ -33,38 +64,7 @@ $stdout.flush
 sleep 0.05
 } 
 puts " "
-      action = gets.chomp
-if you <= 0 && sea_monster <= 0
-
-    putc "*You both die! Game over.*".each_char { |char| 
-        putc char     
-        $stdout.flush
-        sleep 0.05
-        } 
-        break
-        elsif you <= 0 
-
-       putc "*Sir #{name} has died! Game over.*".each_char { |char| 
-        putc char     
-        $stdout.flush
-        sleep 0.05
-        } 
-        break
-        elsif sea_monster <= 0 
-        
-        putc "*The #{sm} is dead now you get back onto the row boat and head down towards the castle in the distance*".each_char { |char| 
-            putc char     
-            $stdout.flush
-            sleep 0.05
-            } 
-                princess = Princess.new
-                princess.char_one_method (name)
-                system "clear"
-                break
-        end 
-
-
-
+action = gets.chomp
     if action == "SL"
     sl_damagesm = rand(-25..-10)
     sl_damagesm_c = sl_damagesm.to_s.red
@@ -72,6 +72,12 @@ if you <= 0 && sea_monster <= 0
     sl_damageyou = rand(-20..-15)
     sl_damageyou_c = sl_damageyou.to_s.blue
     you += sl_damageyou
+    if you <= 0
+        you = 0 
+    end
+        if sea_monster <= 0
+            sea_monster = 0
+        end
     sea_monster_c = sea_monster.to_s.red
     you_c = you.to_s.blue
 
@@ -82,12 +88,12 @@ but during the slash he headbuts you and does #{sl_damageyou_c} damage",
 "You got swallowed up and slash his insides and dealt #{sl_damagesm_c} damage to the #{sm}!
 but he crushes you a little before he spits you back out and does #{sl_damageyou_c} of damage",
 "You slash the him in the face and dealt #{sl_damagesm_c} damage to the #{sm}!
-but the #{sm} jumps up and crashes down and the shockwave knocks you back and does #{sl_damageyou_c} of damage
-    "].shuffle.first.each_char { |char| 
+but the #{sm} jumps up and crashes down and the shockwave knocks you back and does #{sl_damageyou_c} of damage"].shuffle.first.each_char { |char| 
         putc char     
         $stdout.flush
         sleep 0.05
        }
+
 "
 Sir #{name} now has #{you_c} HP! The #{sm} has #{sea_monster_c} HP!".each_char { |char| 
      putc char     
@@ -104,6 +110,12 @@ Sir #{name} now has #{you_c} HP! The #{sm} has #{sea_monster_c} HP!".each_char {
             st_damageyou = rand(-20..-10)
             st_damageyou_c = st_damageyou.to_s.blue
             you += st_damageyou
+            if you <= 0
+                you = 0 
+            end
+                if sea_monster <= 0
+                    sea_monster = 0
+                end
             you_c = you.to_s.blue
             sea_monster_c = sea_monster.to_s.red
 
@@ -114,8 +126,7 @@ but during the stab he headbuts you and does #{st_damageyou_c} damage",
 "You got swallowed up and stabbed his insides and dealt #{st_damagesm_c} damage to the #{sm}!
 but he crushes you a little before he spits you back out and does #{st_damageyou_c} of damage",
 "You stab the him in the face and dealt #{st_damagesm_c} damage to the #{sm}!
-but the #{sm} jumps up and crashes down and the shockwave knocks you back and does #{st_damageyou_c} of damage
-    "].shuffle.first.each_char { |char| 
+but the #{sm} jumps up and crashes down and the shockwave knocks you back and does #{st_damageyou_c} of damage"].shuffle.first.each_char { |char| 
         putc char     
         $stdout.flush
         sleep 0.05
@@ -128,6 +139,36 @@ Sir #{name} now has #{you_c} HP! The #{sm} has #{sea_monster_c} HP!".each_char {
     }
     end
     
+    if action == "CH"
+        ch_damagesm = -100
+        ch_damagesm_c = ch_damagesm.to_s.red
+        sea_monster += ch_damagesm
+        ch_damageyou = 0
+        ch_damageyou_c = ch_damageyou.to_s.blue
+        you += ch_damageyou
+        if you <= 0
+            you = 0 
+        end
+            if sea_monster <= 0
+                sea_monster = 0
+            end
+        sea_monster_c = sea_monster.to_s.red
+        you_c = you.to_s.blue
+    
+"You run away then sneak attack him and deal #{ch_damagesm_c} damage to the #{sm}!
+and cause he didnt see it coming he deals #{ch_damageyou_c} of damage".each_char { |char| 
+            putc char     
+            $stdout.flush
+            sleep 0.05
+           }
+    
+    "
+    Sir #{name} now has #{you_c} HP! The #{sm} has #{sea_monster_c} HP!".each_char { |char| 
+         putc char     
+         $stdout.flush
+         sleep 0.05
+        }
+        end
 
         if action == "B"
             b_healsm = rand(0..3)
@@ -136,12 +177,17 @@ Sir #{name} now has #{you_c} HP! The #{sm} has #{sea_monster_c} HP!".each_char {
             b_healyou = rand(0..5)
             b_healyou_c = b_healyou.to_s.blue
             you += b_healyou
+            if you <= 0
+                you = 0 
+            end
+                if sea_monster <= 0
+                    sea_monster = 0
+                end
             you_c = you.to_s.blue
             sea_monster_c = sea_monster.to_s.red
 
 "You block and regen #{b_healyou_c} HP!
-but during your block the #{sm} rests for a mintue and regens #{b_healsm_c} HP
-            ".each_char { |char| 
+but during your block the #{sm} rests for a mintue and regens #{b_healsm_c} HP".each_char { |char| 
             putc char     
             $stdout.flush
             sleep 0.05
@@ -151,12 +197,22 @@ Sir #{name} now has #{you_c} HP! The #{sm} has #{sea_monster_c} HP!".each_char {
          putc char     
          $stdout.flush
          sleep 0.05
-         }   
+         } 
+         
+         
+         
         end
 end
 end
 end
 end
+
+
+
+
+
+# end
+# end
 # end
 # if Wizard
 #     puts "test"

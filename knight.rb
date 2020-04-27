@@ -1,5 +1,6 @@
 require_relative"./docks.rb"
-# dskjfjs
+require_relative"./bridge.rb"
+
 class Knight
     def char_one_method(name, name2, king, princess)
         jake = "jake".green
@@ -17,8 +18,8 @@ Sir #{name}: Who art thou and what dost thou want
         } 
         
                 loop do
-                    "
-*Type yes or no".each_char { |char| 
+"
+*Type yes or no*".each_char { |char| 
                         putc char     
                         $stdout.flush
                         sleep 0.05
@@ -44,7 +45,7 @@ Sir #{name}: Who art thou and what dost thou want
                 end
             system "clear"
     "#{king}: Thank thou so much.
-*you leave going north for your jorney*.
+*you leave going north for your jorney*
 *You run into a fork in the road and read a sign which reads*
 *Go left towards the docks. Go right towards the bridge*
 *Type left or right*".each_char { |char| 
