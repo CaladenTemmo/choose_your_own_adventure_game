@@ -1,6 +1,5 @@
 require_relative"./knight.rb"
 require_relative"./wizard.rb"
-# require "colorize"
 
 class SPE
    def char_one_method()
