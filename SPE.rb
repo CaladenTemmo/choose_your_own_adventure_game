@@ -1,11 +1,11 @@
 require_relative"./knight.rb"
 require_relative"./wizard.rb"
-require "colorize"
+# require "colorize"
 
 class SPE
    def char_one_method()
       system "clear"
-"Hello welcome to SPE (Saving Princess Emily) what is your name
+"*Hello welcome to SPE (Saving Princess Emily) what is your name*
 ".each_char { |char| 
     putc char     
     $stdout.flush
@@ -13,7 +13,7 @@ class SPE
 }
 name = gets.strip.capitalize.blue
 
-"Oh and what is the name of your friend
+"*Oh and what is the name of your friend*
 ".each_char { |char| 
    putc char     
    $stdout.flush
@@ -39,7 +39,7 @@ Press 2 for wizard
             wizard = Wizard.new
             wizard.char_one_method(name, name2, king, princess)
          else
-             puts "Im sorry i need a yes or no answer".each_char { |char| 
+             puts "*I'm sorry I need a yes or no answer*".each_char { |char| 
                 putc char     
                 $stdout.flush
                 sleep 0.05

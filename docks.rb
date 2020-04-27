@@ -2,7 +2,7 @@ require_relative"./sea_monster.rb"
 
 class Docks
     def char_one_method(name, name2, king, princess)
-        intro_string = "*You hed toward the docks and see a man with a ship and ask to borrow one of his row boats and he nicely agrees to give it to you
+        intro_string = "*You hed toward the docks and see a man with a ship and ask to borrow one of his rowboats and he nicely agrees to give it to you*
 *Press enter to continue*".each_char { |char| 
             putc char     
             $stdout.flush

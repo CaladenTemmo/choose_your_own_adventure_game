@@ -7,9 +7,9 @@ def char_one_method(name, name2, king, princess)
 t = "Troll".red
 hpyou = "100 HP".blue
 hpt = "100 HP".red
-intro_string = "*When your about to cross the bridge a #{t} jumps out and the only way across is to fight.
-Sir #{name} has #{hpyou}
-#{t} has #{hpt}
+intro_string = "*When your about to get onto the bridge a #{t} jumps out and the only way across the bridge is to fight*
+*#{name} has #{hpyou}!*
+*#{t} has #{hpt}!*
 *Press enter to continue*".each_char { |char| 
 putc char     
 $stdout.flush
@@ -25,34 +25,38 @@ end
 loop do
     if troll <= 0 && you <= 0
         system "clear"
-        "Sir #{you} died and the #{t} died. You lose".each_char { |char| 
+"
+*#{you} died and the #{t} died. You lose*".each_char { |char| 
             putc char     
             $stdout.flush
             sleep 0.05
             } 
-        sleep 5
+        sleep 3
         break
         elsif troll <= 0 
-        "#{name} wins the battle and head towards the castle".each_char { |char| 
+"
+*#{name} wins the battle and head towards the castle*".each_char { |char| 
             putc char     
             $stdout.flush
             sleep 0.05
             } 
-            sleep 5
+            sleep 3
         castle = Princess.new
         castle.char_one_method(name, name2, king, princess)
         break
     elsif you <= 0
         system "clear"
-        "Sir #{you} died".each_char { |char| 
+"
+*#{you} died*".each_char { |char| 
             putc char     
             $stdout.flush
             sleep 0.05
             } 
-        sleep 5
+        sleep 3
     break
     else
-"Type any of the options to attack or block
+"
+*Type any of the options to attack or block*
 SL=slash(damage)
 B=block(heal)
 ST=stab(damage)".each_char { |char| 
@@ -78,21 +82,21 @@ action = gets.chomp
     troll_c = troll.to_s.red
     you_c = you.to_s.blue
 
-    ["You slashed him in his chest and dealt #{sl_damaget_c} damage to the #{t}!
-but during your slash he wacks you with his tail and does #{sl_damageyou_c} of damage", 
-"You slashed him in the neck and delt #{sl_damaget_c} damage to the #{t}
-but during the slash he headbuts you and does #{sl_damageyou_c} damage",
-"You got swallowed up and slash his insides and dealt #{sl_damaget_c} damage to the #{t}!
-but he crushes you a little before he spits you back out and does #{sl_damageyou_c} of damage",
-"You slash the him in the face and dealt #{sl_damaget_c} damage to the #{t}!
-but the #{t} jumps up and crashes down and the shockwave knocks you back and does #{sl_damageyou_c} of damage"].shuffle.first.each_char { |char| 
+    [*"You slashed him in his chest and dealt #{sl_damaget_c} damage to the #{t}!
+but during your slash he wacks you with his tail and does #{sl_damageyou_c} damage*", 
+"*You slashed him in the neck and delt #{sl_damaget_c} damage to the #{t}
+but during the slash, he headbutts you and does #{sl_damageyou_c} damage*",
+"*You got swallowed up and slash his insides and dealt #{sl_damaget_c} damage to the #{t}!
+but he crushes you a little before he spits you back out and does #{sl_damageyou_c} damage*",
+"*You slash him in the face and dealt #{sl_damaget_c} damage to the #{t}!
+but the #{t} jumps up and crashes down and the shockwave knocks you back and does #{sl_damageyou_c} damage*"].shuffle.first.each_char { |char| 
         putc char     
         $stdout.flush
         sleep 0.05
        }
 
 "
-Sir #{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!".each_char { |char| 
+*#{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!*".each_char { |char| 
      putc char     
      $stdout.flush
      sleep 0.05
@@ -116,20 +120,20 @@ Sir #{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!".each_char { |char|
             you_c = you.to_s.blue
             troll_c = troll.to_s.red
 
-    ["You stabbed him in his chest and dealt #{st_damaget_c} damage to the #{t}!
-but during your stab he wacks you with his tail and does #{st_damageyou_c} of damage", 
-"You stabbed him in the neck and delt #{st_damaget_c} damage to the #{t}
-but during the stab he headbuts you and does #{st_damageyou_c} damage",
-"You got swallowed up and stabbed his insides and dealt #{st_damaget_c} damage to the #{t}!
-but he crushes you a little before he spits you back out and does #{st_damageyou_c} of damage",
-"You stab the him in the face and dealt #{st_damaget_c} damage to the #{t}!
-but the #{t} jumps up and crashes down and the shockwave knocks you back and does #{st_damageyou_c} of damage"].shuffle.first.each_char { |char| 
+    ["*You stabbed him in his chest and dealt #{st_damaget_c} damage to the #{t}!
+but during your stab he wacks you with his tail and does #{st_damageyou_c} damage*", 
+"*You stabbed him in the neck and delt #{st_damaget_c} damage to the #{t}
+but during the stab, he headbutts you and does #{st_damageyou_c} damage*",
+"*You got swallowed up and stabbed his insides and dealt #{st_damaget_c} damage to the #{t}!
+but he crushes you a little before he spits you back out and does #{st_damageyou_c} damage*",
+"*You stab him in the face and dealt #{st_damaget_c} damage to the #{t}!
+but the #{t} jumps up and crashes down and the shockwave knocks you back and does #{st_damageyou_c} damage*"].shuffle.first.each_char { |char| 
         putc char     
         $stdout.flush
         sleep 0.05
        }
 "
-Sir #{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!".each_char { |char| 
+*#{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!*".each_char { |char| 
      putc char     
      $stdout.flush
      sleep 0.05
@@ -152,15 +156,16 @@ Sir #{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!".each_char { |char|
         troll_c = troll.to_s.red
         you_c = you.to_s.blue
     
-"You run away then sneak attack him and deal #{ch_damaget_c} damage to the #{t}!
-and cause he didnt see it coming he deals #{ch_damageyou_c} of damage".each_char { |char| 
+"*CHEAT ACTIVATED*
+*You run away then sneak attack him and deal #{ch_damaget_c} damage to the #{t}!
+and cause he didn't see it coming he deals #{ch_damageyou_c} damage*".each_char { |char| 
             putc char     
             $stdout.flush
             sleep 0.05
            }
     
-    "
-    Sir #{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!".each_char { |char| 
+"
+*#{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!*".each_char { |char| 
          putc char     
          $stdout.flush
          sleep 0.05
@@ -183,14 +188,14 @@ and cause he didnt see it coming he deals #{ch_damageyou_c} of damage".each_char
             you_c = you.to_s.blue
             troll_c = troll.to_s.red
 
-"You block and regen #{b_healyou_c} HP!
-but during your block the #{t} rests for a mintue and regens #{b_healt_c} HP".each_char { |char| 
+"*You block and regen #{b_healyou_c} HP!
+but during your block the #{t} rests for a mintue and regens #{b_healt_c} HP*".each_char { |char| 
             putc char     
             $stdout.flush
             sleep 0.05
            }
 "
-Sir #{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!".each_char { |char| 
+*#{name} now has #{you_c} HP! The #{t} has #{troll_c} HP!*".each_char { |char| 
          putc char     
          $stdout.flush
          sleep 0.05
