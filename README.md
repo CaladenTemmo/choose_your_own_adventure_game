@@ -45,6 +45,7 @@ I've just tested my health and damage system and both are working with no errors
 
 
 Help file
+
 To install go to github (https://github.com/CaladenTemmo/choose_your_own_adventure_game) then press the green button that says clone or download
 You will need tty-prompy and artii gems
 There are features such as choosing your character and naming your character, choosing a pathway to decide which battle you will go into and a health and damage fighting system.
@@ -65,7 +66,9 @@ Trello:
 https://trello.com/b/RPU7rAxC/terminal-app
 
 Trello is in docs
+
 Mind Map is in docs
+
 Tests are in docs
 
 
