@@ -1,4 +1,4 @@
-# choose_your_own_adventure_game
+#choose_your_own_adventure_game
 Saving Princess Emily
 
 Introduction
@@ -63,8 +63,88 @@ Implementation
 Trello:
 https://trello.com/b/RPU7rAxC/terminal-app
 
+Mind Map
 
 
+
+
+
+Trello Board
+
+
+
+
+
+
+
+
+
+
+Game Testing
+
+Feature
+What it is
+Expected Outcome
+Actual Outcome
+Is it a problem
+Welcome screen 
+An Artii drawing of the name of the game
+Artii art should pop up on the screen
+As expected
+No
+What happens if i hit keys welcome screen game
+
+---
+Might make you restart 
+Nothing happens
+No
+What happens if i hit keys during the game
+
+---
+Should just make you re-enter the message
+Just makes you re-enter the message
+Yes
+What happens if you type in the wrong text
+
+---
+Should make you re-enter in correctly
+It makes you enter it in correctly 
+No
+What happens if you press esc
+---
+should make you re-enter the text
+It messes up the text and makes you re-enter the option
+Yes
+What happens if you choose knight 
+
+---
+Should take you to knight
+Takes you to the knight 
+No
+What happens if you choose wizard
+
+---
+Should take you to wizard
+Takes you to the wizard
+No
+What happens if you choose the docks
+
+---
+Should take you to the docks
+Takes you to the docks
+No
+What happens if you choose the bridge
+
+---
+Should take you to the bridge
+Takes you to the bridge
+No
+What happens when asked to press enter
+
+---
+Should go to next file
+Goes to the next file
+No
 
 Day 1
 
@@ -105,4 +185,5 @@ Day 7
 I clean up all the text
 I run through the game to see if there are anymore errors
 And check for any problems
+
 
